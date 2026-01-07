@@ -1,80 +1,80 @@
-/* Container around messages + input */
-.chat-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    height: 80vh;
-    margin: 40px auto;
-    border: 2px solid #00ffff;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #1a1a1a;
-  }
-  
-  /* Scrollable area for messages */
-  .messages {
-    flex: 1;
-    padding: 16px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  /* Individual message bubbles */
-  .message {
-    max-width: 75%;
-    padding: 10px 14px;
-    border-radius: 18px;
-    line-height: 1.4;
-    word-wrap: break-word;
-  }
-  
-  /* Styling for user vs. bot bubbles */
-  .message.user {
-    align-self: flex-end;
-    background: #00bfff;
-    color: #000;
-    border-bottom-right-radius: 4px;
-  }
-  
-  .message.bot {
-    align-self: flex-start;
-    background: #333;
-    color: #fff;
-    border-bottom-left-radius: 4px;
-  }
-  
-  /* Input area at the bottom */
-  .input-area {
-    display: flex;
-    padding: 12px;
-    background: #111;
-    gap: 8px;
-  }
-  
-  .input-area textarea {
-    flex: 1;
-    resize: none;
-    padding: 8px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    background: #222;
-    color: #eee;
-    font-size: 1rem;
-  }
-  
-  .input-area button {
-    padding: 0 20px;
-    background: #00ffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-  
-  .input-area button:hover {
-    background: #00d4d4;
-  }
-  
+/* =========================================================
+   Chatbot page styles
+   File: /assets/chatbot.css
+
+   GOAL:
+   - Keep chatbot styling separate from main site styling
+   - Still match the look & feel (cards, spacing, typography)
+========================================================= */
+
+.chatbot-wrap {
+  width: min(100% - 32px, 900px);
+  margin: 28px auto;
+}
+
+.chatbot-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.chatbot-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  padding: 18px;
+}
+
+.chatbot-card h2 {
+  margin: 0 0 10px 0;
+}
+
+.chatbot-card p {
+  margin: 0 0 12px 0;
+  color: rgba(230,241,255,0.75);
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin: 12px 0 6px 0;
+}
+
+textarea, input, select {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.30);
+  color: white;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.output {
+  white-space: pre-wrap;
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 140px;
+  color: rgba(230,241,255,0.90);
+}
+
+.small {
+  font-size: 12px;
+  color: rgba(230,241,255,0.65);
+}

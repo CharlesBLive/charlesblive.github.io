@@ -1,156 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Charles Biffin - Portfolio</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- =========================
+       Basic document metadata
+       ========================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- =========================
+       SEO (simple + effective)
+       ========================= -->
+  <title>Charles Biffin | Software Engineer (Applied AI + Systems)</title>
+  <meta name="description"
+        content="Charles Biffin — Software Engineer focused on practical systems and applied AI/LLM code quality. Projects include an AI email rewrite tool, cloud ML capstone, and Unity/C# WebGL demo." />
+
+  <!-- =========================
+       Styles
+       ========================= -->
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-button">Home</a>
-    <a href="about.html" class="nav-button">About me</a>
-    <a href="projects.html" class="nav-button">Projects</a>
-    <a href="links.html" class="nav-button">Links</a>
-  </nav>
+  <!-- =========================================================
+       Shared Header / Nav (keep identical across pages)
+       ========================================================= -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <!-- Brand block -->
+      <div class="brand" aria-label="Site brand">
+        <div class="brand__name">Charles Biffin</div>
+        <div class="brand__tagline">Software Engineering • AI/LLM Quality • C# • Web</div>
+      </div>
 
-  <!-- Welcome Section -->
-  <section class="welcome">
-    <h1>Charles Biffin</h1>
-    <p>
-      Software Engineer + IT professional with hands-on experience across
-      enterprise support, cloud environments (Microsoft 365 / Azure / AD / SCCM),
-      and applied AI workflows. I build reliable, user-focused solutions and I’m
-      currently seeking software engineering roles where I can contribute to
-      production systems and grow alongside strong engineering teams.
-      <a href="https://www.linkedin.com/in/charlesbiffin" target="_blank" rel="noopener">LinkedIn</a>
-    </p>
-
-    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;">
-      <a class="game-button" href="assets/charles-biffin-resume.pdf" target="_blank" rel="noopener">
-        Download Resume (PDF)
-      </a>
-      <a class="game-button" href="projects.html">
-        View Projects
-      </a>
-      <a class="game-button" href="about.html">
-        About Me
-      </a>
+      <!-- Nav (set .is-active on current page) -->
+      <nav class="nav" aria-label="Primary">
+        <a class="is-active" href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="links.html">Links</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- Experience Section -->
-  <section class="experience">
-    <h2>Experience</h2>
+  <!-- =========================================================
+       Main content
+       ========================================================= -->
+  <main id="main" class="container">
 
-    <div class="job">
-      <strong>Service Desk Technician | NAES Corporation | Jun 2025 – Current</strong>
-      <ul>
-        <li>Support Microsoft 365, Active Directory, and Azure environments.</li>
-        <li>Assist with SCCM deployments and patching processes.</li>
-        <li>Collaborate with the infrastructure team on upgrades and cloud integration efforts.</li>
-      </ul>
-    </div>
+    <!-- =========================
+         HERO / Value proposition
+         ========================= -->
+    <section class="hero panel section" aria-label="Introduction">
+      <!-- Big headline (clear positioning for recruiters) -->
+      <h1>Software Engineer focused on practical systems + applied AI</h1>
 
-    <div class="job">
-      <strong>AI Response Reviewer | Outlier | Oct 2024 – Dec 2025</strong>
-      <ul>
-        <li>Reviewed AI-generated programming responses for correctness, clarity, and real-world usability.</li>
-        <li>Debugged and corrected AI-generated code to meet functional and logical requirements.</li>
-        <li>Audited peer-reviewed outputs for consistency, accuracy, and guideline adherence.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <strong>Game Development Intern | RecLab | Jan 2024 – Oct 2024</strong>
-      <ul>
-        <li>Built a 2D Unity/C# platformer with gameplay systems, UI, animation, and enemy behavior.</li>
-        <li>Contributed to combat, physics interactions, level design, and tools within a collaborative workflow.</li>
-        <li>
-          Project GitHub:
-          <a href="https://github.com/RecLabDev/Source/tree/features/sandbox-scene-v1?tab=readme-ov-file" target="_blank" rel="noopener">
-            RecLab GitHub
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <strong>Desktop Support Engineer III | NSC Global | Mar 2024 – Jun 2025</strong>
-      <ul>
-        <li>Imaging, repair, troubleshooting, and configuration testing for enterprise laptops/desktops.</li>
-        <li>Owned ticket resolution and end-user education for hardware/software issues.</li>
-        <li>Created knowledge base articles and SOPs used by Tier 1/Tier 2 support staff.</li>
-        <li>Supported SCCM workflows and Active Directory administration tasks.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <strong>IT Technician | Jet City IT | Jul 2022 – Mar 2024</strong>
-      <ul>
-        <li>Provided onsite and remote support for SMB and enterprise environments.</li>
-        <li>Created and reviewed design documentation with clients to meet technical standards.</li>
-        <li>Deployed, configured, and validated client hardware/software integrations.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <strong>Consultation Agent | Geek Squad | May 2018 – Aug 2019</strong>
-      <ul>
-        <li>Diagnosed and resolved consumer hardware/software issues and educated customers.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Project Cards -->
-  <section class="projects">
-    <div class="project-card">
-      <h3>Awaiting Adventure</h3>
+      <!-- Short summary (don’t overload; get to proof quickly) -->
       <p>
-        2D Unity game (C#, Visual Studio, GitHub) featuring tilemap/Rule Tile levels,
-        enemy spawn-and-patrol AI, animated chests and victory triggers, dynamic leaf
-        particle effects, and parallax backgrounds.
+        I’m a detail-oriented engineer based in <strong>North Bend, WA</strong> with a B.S. in Computer Science.
+        I build reliable software, ship features, and I’ve worked hands-on with
+        <strong>AI-generated code quality</strong> (reviewing, debugging, and improving correctness).
       </p>
 
-      <!-- Optional image (uncomment if you want a screenshot)-->
-      <img src="assets/pictures/UnityProject.png" alt="Awaiting Adventure screenshot">
-      
+      <!-- Calls to action (what recruiters click) -->
+      <div class="hero__cta">
+        <!-- NOTE: Your repo screenshot shows "Charles-Biffin-Resume.pdf" in /assets.
+             If your actual filename differs (case matters on GitHub Pages), rename it or update this link. -->
+        <a class="btn btn--primary" href="assets/Charles-Biffin-Resume.pdf" target="_blank" rel="noopener">
+          Download Resume (PDF)
+        </a>
 
-      <a href="projects/unitygame/unitygame.html" class="game-button">Play</a>
-    </div>
+        <a class="btn" href="projects.html">View Projects</a>
 
-    <div class="project-card">
-      <h3>Email ChatBot</h3>
-      <p>
-        Email rewriting assistant that uses the OpenAI API to rewrite messages in different tones
-        (professional, friendly, concise, etc.) with a simple web UI.
-      </p>
+        <a class="btn" href="https://www.linkedin.com/in/charlesbiffin" target="_blank" rel="noopener">
+          LinkedIn
+        </a>
 
-      <!-- Optional image-->
-      <img src="assets/pictures/cohere logo.png" alt="Chatbot screenshot">
-      
+        <a class="btn" href="https://github.com/CharlesBLive" target="_blank" rel="noopener">
+          GitHub
+        </a>
+      </div>
+    </section>
 
-      <a href="projects/chatbot/chatbot.html" class="game-button">Open ChatBot</a>
-    </div>
+    <!-- =========================
+         EXPERIENCE (software-first ordering)
+         ========================= -->
+    <section class="section" aria-label="Experience">
+      <h2 class="section__title">Experience</h2>
+      <p class="section__subtitle">Ordered to highlight software + AI relevance first.</p>
 
-    <div class="project-card">
-      <h3>Autonomous Garden Monitoring (Capstone)</h3>
-      <p>
-        3rd-place senior capstone: built a drone-based plant disease detection pipeline
-        (object recognition → S3 → EC2-hosted ML → DynamoDB → React/Node.js).
-      </p>
+      <div class="experience-list">
+        <!-- -------- AI role -------- -->
+        <article class="role">
+          <div class="role__top">
+            <h3 class="role__title">AI Response Reviewer — Outlier</h3>
+            <p class="role__meta">Oct 2024 – Dec 2025</p>
+          </div>
+          <ul>
+            <li>Reviewed AI-generated programming responses for correctness, clarity, and real-world usability.</li>
+            <li>Debugged and corrected AI-generated code (logic, edge cases, performance/complexity issues).</li>
+            <li>Audited peer-reviewed outputs for consistency and guideline compliance to improve reliability.</li>
+          </ul>
+        </article>
 
-      <!-- Optional image--><!-- Optional image-->
-      <img src="assets/pictures/AGMPoster.jpg" alt="Autonomous Garden Monitoring Poster">
+        <!-- -------- Internship / engineering -------- -->
+        <article class="role">
+          <div class="role__top">
+            <h3 class="role__title">Game Development Intern — RecLab</h3>
+            <p class="role__meta">Jan 2024 – Oct 2024</p>
+          </div>
+          <ul>
+            <li>Built interactive gameplay systems in Unity/C# with an iterative development workflow.</li>
+            <li>Implemented UI, animations, physics interactions, and AI behaviors with a focus on maintainability.</li>
+            <li>
+              Project repo:
+              <a href="https://github.com/RecLabDev/Source/tree/features/sandbox-scene-v1?tab=readme-ov-file" target="_blank" rel="noopener">
+                RecLab GitHub
+              </a>
+            </li>
+          </ul>
+        </article>
 
-      <a href="https://github.com/BC-CapstoneProjects/22-GardenMonitoring/tree/Charles" class="game-button" target="_blank" rel="noopener">
-        GitHub
-      </a>
-    </div>
-  </section>
+        <!-- -------- Current role (frame as systems + engineering) -------- -->
+        <article class="role">
+          <div class="role__top">
+            <h3 class="role__title">Service Desk Technician — NAES Corporation</h3>
+            <p class="role__meta">Jun 2025 – Current</p>
+          </div>
+          <ul>
+            <li>Support Microsoft 365, Active Directory, and Azure environments in an enterprise setting.</li>
+            <li>Assist with SCCM deployments and patching workflows.</li>
+            <li>Partner with infrastructure stakeholders on upgrades and cloud integration projects.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
+    <!-- =========================
+         FEATURED PROJECTS (preview)
+         ========================= -->
+    <section class="section" aria-label="Featured projects preview">
+      <h2 class="section__title">Featured projects</h2>
+      <p class="section__subtitle">A quick preview — full details are on the Projects page.</p>
+
+      <!-- 3-up grid: aligns cards & buttons automatically -->
+      <div class="grid grid--3">
+        <!-- -------- Project 1: AI (lead with AI) -------- -->
+        <article class="card" aria-label="Email Chatbot project card">
+          <h3>Email Chatbot (AI rewrite tool)</h3>
+          <p>
+            Web app that rewrites an email into different tones using an LLM API.
+            Built as a practical workflow tool (not a toy demo).
+          </p>
+
+          <div class="tags" aria-label="Technologies">
+            <span class="tag">JavaScript</span>
+            <span class="tag">LLM API</span>
+            <span class="tag">Prompting</span>
+            <span class="tag">UI</span>
+          </div>
+
+          <div class="card__media" aria-label="Project image">
+            <!-- If you add a real screenshot later, replace this image -->
+            <img src="assets/pictures/cohere%20logo.png" alt="Email Chatbot preview image" loading="lazy" />
+          </div>
+
+          <div class="card__footer">
+            <a class="btn btn--primary" href="projects/chatbot/chatbot.html">Open Demo</a>
+            <a class="btn" href="projects.html#email-chatbot">Details</a>
+          </div>
+        </article>
+
+        <!-- -------- Project 2: Cloud/ML capstone -------- -->
+        <article class="card" aria-label="Autonomous Garden Monitoring project card">
+          <h3>Autonomous Garden Monitoring (Capstone)</h3>
+          <p>
+            3rd-place senior capstone: image capture → S3 → EC2-hosted ML → DynamoDB → React visualization.
+          </p>
+
+          <div class="tags" aria-label="Technologies">
+            <span class="tag">AWS</span>
+            <span class="tag">ML</span>
+            <span class="tag">React</span>
+            <span class="tag">Node</span>
+            <span class="tag">DynamoDB</span>
+          </div>
+
+          <div class="card__media" aria-label="Project image">
+            <img src="assets/pictures/AGMPoster.jpg" alt="Autonomous Garden Monitoring poster" loading="lazy" />
+          </div>
+
+          <div class="card__footer">
+            <a class="btn btn--primary" href="https://github.com/BC-CapstoneProjects/22-GardenMonitoring/tree/Charles" target="_blank" rel="noopener">
+              GitHub
+            </a>
+            <a class="btn" href="projects.html#agm">Details</a>
+          </div>
+        </article>
+
+        <!-- -------- Project 3: Unity/C# (frame as interactive systems) -------- -->
+        <article class="card" aria-label="Interactive Systems Demo project card">
+          <h3>Interactive Systems Demo (Unity/C# WebGL)</h3>
+          <p>
+            2D Unity project showcasing gameplay systems, UI, animation, physics, AI behavior, and VFX.
+            Presented as an engineering demo: iteration, debugging, and maintainability.
+          </p>
+
+          <div class="tags" aria-label="Technologies">
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">WebGL</span>
+            <span class="tag">Systems</span>
+          </div>
+
+          <div class="card__media" aria-label="Project image">
+            <img src="assets/pictures/UnityProject.png" alt="Unity WebGL project screenshot" loading="lazy" />
+          </div>
+
+          <div class="card__footer">
+            <a class="btn btn--primary" href="projects/unitygame/unitygame.html">Play Demo</a>
+            <a class="btn" href="projects.html#unity-webgl">Details</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================
+         Footer
+         ========================= -->
+    <footer class="site-footer">
+      <!-- Light touch footer. Recruiters rarely read big footers. -->
+      <div>© <span id="year"></span> Charles Biffin • Built with HTML/CSS • Hosted on GitHub Pages</div>
+    </footer>
+
+  </main>
+
+  <!-- Tiny JS: sets year (optional; safe) -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -1,34 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Links - Charles Biffin</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- =========================
+       Metadata + SEO
+       ========================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Links | Charles Biffin</title>
+  <meta name="description"
+        content="Contact and profile links for Charles Biffin: resume PDF, LinkedIn, GitHub, and email." />
+
+  <!-- =========================
+       Shared stylesheet
+       ========================= -->
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
+  <!-- =========================
+       Accessibility: skip link
+       ========================= -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Large Page Title -->
-    <div class="page-title links-title">Links Page</div>
+  <!-- =========================================================
+       Shared Header / Nav (MUST match other pages)
+       ========================================================= -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <!-- Brand / identity -->
+      <div class="brand" aria-label="Site brand">
+        <div class="brand__name">Charles Biffin</div>
+        <div class="brand__tagline">Software Engineering • AI/LLM Quality • C# • Web</div>
+      </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="nav-button">Home</a>
-        <a href="about.html" class="nav-button">About me</a>
-        <a href="projects.html" class="nav-button">Projects</a>
-        <a href="links.html" class="nav-button">Links</a>
-    </nav>
-
-    <!-- Main Container -->
-    <div class="main-container">
-        <section class="content-box">
-            <h2>Links to resources</h2>
-            <ul>
-                <li><a href="https://example.com" target="_blank">Example Resource 1</a></li>
-                <li><a href="https://example.com" target="_blank">Example Resource 2</a></li>
-            </ul>
-        </section>
+      <!-- Navigation pills -->
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a class="is-active" href="links.html" aria-current="page">Links</a>
+      </nav>
     </div>
+  </header>
 
+  <!-- =========================================================
+       Main content
+       ========================================================= -->
+  <main id="main" class="container">
+
+    <!-- =========================
+         Page hero panel (matches Projects/About styling)
+         ========================= -->
+    <section class="page-hero panel section" aria-label="Links header">
+      <h1>Links</h1>
+      <p>Quick access to the things recruiters actually click.</p>
+    </section>
+
+    <!-- =========================
+         Links / contact cards (2-column grid)
+         ========================= -->
+    <section class="section" aria-label="Contact and profiles">
+      <h2 class="section__title">Contact & profiles</h2>
+      <p class="section__subtitle">Resume, LinkedIn, GitHub, and the fastest way to reach me.</p>
+
+      <!-- IMPORTANT:
+           This wrapper is what makes the cards align into columns.
+           If you remove this, the cards will stack full-width like your screenshot. -->
+      <div class="grid grid--2">
+
+        <!-- =========================
+             Card: Resume
+             ========================= -->
+        <article class="card" aria-label="Resume card">
+          <h3>Resume (PDF)</h3>
+          <p>Download the latest version of my resume.</p>
+
+          <!-- Footer pinned to bottom of the card -->
+          <div class="card__footer">
+            <!-- NOTE: filename is case-sensitive on GitHub Pages -->
+            <a class="btn btn--primary" href="assets/Charles-Biffin-Resume.pdf" target="_blank" rel="noopener">
+              Open Resume
+            </a>
+          </div>
+        </article>
+
+        <!-- =========================
+             Card: LinkedIn
+             ========================= -->
+        <article class="card" aria-label="LinkedIn card">
+          <h3>LinkedIn</h3>
+          <p>Professional history, roles, and connections.</p>
+
+          <div class="card__footer">
+            <a class="btn btn--primary" href="https://www.linkedin.com/in/charlesbiffin" target="_blank" rel="noopener">
+              Open LinkedIn
+            </a>
+          </div>
+        </article>
+
+        <!-- =========================
+             Card: GitHub
+             ========================= -->
+        <article class="card" aria-label="GitHub card">
+          <h3>GitHub</h3>
+          <p>Code, repositories, and project history.</p>
+
+          <div class="card__footer">
+            <a class="btn btn--primary" href="https://github.com/CharlesBLive" target="_blank" rel="noopener">
+              Open GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- =========================
+             Card: Email
+             ========================= -->
+        <article class="card" aria-label="Email card">
+          <h3>Email</h3>
+          <p>Best way to reach me for opportunities.</p>
+
+          <div class="card__footer">
+            <a class="btn btn--primary" href="mailto:charbiffin@gmail.com">
+              Send Email
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         Footer
+         ========================= -->
+    <footer class="site-footer">
+      <div>© <span id="year"></span> Charles Biffin</div>
+    </footer>
+
+  </main>
+
+  <!-- Tiny JS: sets year (optional) -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

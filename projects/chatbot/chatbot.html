@@ -1,30 +1,101 @@
-<!-- //paste in email
-//chat asks you what tone you want
-
-//you tell it what tone(buisness, friendly, angrey)
-
-//chat sips back a new email in desired tone -->
-
-<!-- chatbot.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"> <!-- Character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+  <!-- =========================
+       Metadata
+       ========================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="/assets/style.css">
-  <link rel="stylesheet" href="/assets/chatbot.css">
+  <title>Email Chatbot — Charles Biffin</title>
 
-  <!-- Load chat logic after HTML parsing -->
-  <script defer src="chatbot.js"></script>
+  <!-- =========================
+       Main site styles
+       ========================= -->
+  <link rel="stylesheet" href="../../assets/style.css" />
 
-  <title>Email Chatbot</title>
+  <!-- =========================
+       Chatbot-specific styles
+       ========================= -->
+  <link rel="stylesheet" href="../../assets/chatbot.css" />
 </head>
+
 <body>
-  <!-- Chat interface elements -->
-  <div id="messages"></div>        <!-- Chat messages appear here -->
-  <input id="input" type="text" placeholder="Type your message…" />
-  <button id="send">Send</button>
+  <!-- =========================================================
+       NAVIGATION (shared)
+  ========================================================== -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="name">Charles Biffin</div>
+        <div class="tagline">Email Tone Rewriter (AI Workflow Demo)</div>
+      </div>
+
+      <div class="nav-links">
+        <a href="../../index.html" class="nav-button">Home</a>
+        <a href="../../projects.html" class="nav-button active">Projects</a>
+        <a href="../../links.html" class="nav-button">Links</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       CHATBOT UI
+       - Clean, recruiter-friendly demo layout
+       - You can keep expanding this later (history, copy button, etc.)
+  ========================================================== -->
+  <main class="chatbot-wrap">
+    <div class="chatbot-grid">
+      <!-- =========================
+           INPUT CARD
+           ========================= -->
+      <section class="chatbot-card">
+        <h2>Email Rewriter</h2>
+        <p>
+          Paste your email, pick a tone, and generate a rewrite.
+          <span class="small">(If your API endpoint isn’t configured, you’ll see an error message.)</span>
+        </p>
+
+        <!-- User input -->
+        <label for="emailInput">Your email</label>
+        <textarea id="emailInput" placeholder="Paste your email draft here..."></textarea>
+
+        <!-- Tone selection -->
+        <label for="toneSelect">Tone</label>
+        <select id="toneSelect">
+          <option value="professional">Professional</option>
+          <option value="friendly">Friendly</option>
+          <option value="direct">Direct</option>
+          <option value="empathetic">Empathetic</option>
+          <option value="confident">Confident</option>
+        </select>
+
+        <!-- Actions -->
+        <div class="row">
+          <button class="btn accent" id="rewriteBtn" type="button">Rewrite</button>
+          <button class="btn" id="clearBtn" type="button">Clear</button>
+        </div>
+
+        <p class="small" id="statusText"></p>
+      </section>
+
+      <!-- =========================
+           OUTPUT CARD
+           ========================= -->
+      <section class="chatbot-card">
+        <h2>Rewritten output</h2>
+        <div class="output" id="outputBox">Your rewritten email will appear here…</div>
+
+        <div class="row">
+          <button class="btn" id="copyBtn" type="button">Copy output</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- =========================================================
+       Script
+  ========================================================== -->
+  <script src="chatbot.js"></script>
 </body>
 </html>

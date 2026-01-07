@@ -1,66 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About Me - Charles Biffin</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- =========================
+       Metadata + SEO
+       ========================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Charles Biffin</title>
+  <meta name="description"
+        content="About Charles Biffin — software engineer focused on practical systems and applied AI/LLM code quality, based in North Bend, WA." />
+
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Large Page Title -->
-    <div class="page-title about-title">About Me</div>
+  <!-- =========================================================
+       Shared Header / Nav (MATCHES index/projects/links)
+       ========================================================= -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="brand">
+        <div class="brand__name">Charles Biffin</div>
+        <div class="brand__tagline">Software Engineering • AI/LLM Quality • C# • Web</div>
+      </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="nav-button">Home</a>
-        <a href="about.html" class="nav-button">About Me</a>
-        <a href="projects.html" class="nav-button">Projects</a>
-        <a href="links.html" class="nav-button">Links</a>
-    </nav>
-
-    <!-- Main Container -->
-    <div class="main-container">
-        <section class="content-box">
-  <h2>About Me</h2>
-
-  <p>
-    I’m a <strong>detail-oriented Software Engineer and IT professional</strong> based in <strong>North Bend, WA</strong>, with a <strong>Bachelor’s degree in Computer Science</strong> from Bellevue College. My background spans <strong>enterprise IT systems, software development, and applied AI workflows</strong>, allowing me to approach technical problems from both an infrastructure and engineering perspective.
-  </p>
-
-  <p>
-    Professionally, I support and administer <strong>Microsoft 365, Active Directory, Azure environments, and SCCM deployments</strong> in enterprise settings, while delivering reliable end-user support and clear technical documentation. Alongside my IT career, I have hands-on experience developing software and games using <strong>Unity and C#</strong>, contributing to <strong>gameplay systems, UI, animations, AI behavior, physics, and tooling</strong> within collaborative development environments.
-  </p>
-
-  <p>
-    A significant part of my recent experience involves working directly with <strong>AI systems</strong>. As an <strong>AI Response Reviewer</strong>, I evaluated and improved AI-generated programming responses, debugged incorrect or inefficient code, and ensured outputs met <strong>real-world software engineering standards</strong>. This work strengthened my ability to assess AI reliability, identify edge cases, and understand how <strong>large language models integrate into modern development workflows</strong>.
-  </p>
-
-  <p>
-    I’m particularly interested in roles where <strong>software engineering, systems, and AI intersect</strong>—whether that’s improving developer tooling, building intelligent applications, or supporting AI-enabled platforms at scale. I value <strong>clean code, clear communication, and continuous learning</strong>, and I’m motivated by technology’s ability to solve practical problems and create meaningful impact.
-  </p>
-
-  <p>
-    Outside of work, I enjoy <strong>game development</strong>, experimenting with emerging technologies, <strong>disc golfing</strong>, and following football and hockey. I’m always looking for opportunities to grow technically while contributing to teams building thoughtful, well-engineered solutions.
-  </p>
-
-  <p>
-    <strong>I’m currently seeking software engineering roles</strong> where I can contribute to production systems, grow alongside experienced engineers, and work on technically meaningful problems.
-  </p>
-</section>
-
-        <section class="content-box">
-  <h3>Current Focus Areas</h3>
-  <ul>
-    <li><strong>AI-assisted development workflows</strong> and code quality evaluation</li>
-    <li><strong>Unity game development</strong> with C# and gameplay systems</li>
-    <li><strong>Enterprise IT systems</strong> and cloud-integrated environments</li>
-    <li>Building <strong>reliable, maintainable software</strong> under real-world constraints</li>
-  </ul>
-</section>
-
-
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a class="is-active" href="about.html" aria-current="page">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="links.html">Links</a>
+      </nav>
     </div>
+  </header>
 
+  <main id="main" class="container">
+
+    <!-- =========================
+         Page header panel
+         ========================= -->
+    <section class="page-hero panel section" aria-label="About header">
+      <h1>About</h1>
+      <p>How I think about engineering, systems, and applied AI quality work.</p>
+    </section>
+
+    <!-- =========================
+         About content
+         ========================= -->
+    <section class="section panel" style="padding: 20px 22px;" aria-label="About content">
+      <!-- NOTE:
+           I’m using your “polished” about text, but kept it tighter and recruiter-focused. -->
+      <h2 class="section__title">About me</h2>
+
+      <p class="section__subtitle" style="max-width: 90ch;">
+        I’m a <strong>detail-oriented Software Engineer and IT professional</strong> based in <strong>North Bend, WA</strong>,
+        with a B.S. in Computer Science from Bellevue College. My background spans
+        <strong>enterprise systems</strong>, <strong>software development</strong>, and <strong>applied AI workflows</strong>,
+        so I’m comfortable working across both infrastructure and engineering constraints.
+      </p>
+
+      <!-- Break paragraphs for readability (better than one giant wall) -->
+      <p style="max-width: 90ch; color: var(--muted);">
+        In enterprise environments, I support and administer <strong>Microsoft 365, Active Directory, Azure</strong>,
+        and assist with <strong>SCCM deployments</strong>—with a strong focus on reliability, documentation,
+        and execution under real-world constraints.
+      </p>
+
+      <p style="max-width: 90ch; color: var(--muted);">
+        On the engineering side, I build software and interactive systems in <strong>Unity / C#</strong>,
+        working on <strong>gameplay systems</strong>, <strong>UI</strong>, <strong>animations</strong>,
+        <strong>AI behavior</strong>, <strong>physics</strong>, and tooling in collaborative workflows.
+        I treat this work like production engineering: clean structure, debugging discipline, and iteration.
+      </p>
+
+      <p style="max-width: 90ch; color: var(--muted);">
+        A significant part of my recent experience involves working directly with <strong>AI systems</strong>.
+        As an <strong>AI Response Reviewer</strong>, I evaluated AI-generated programming outputs, debugged incorrect or inefficient code,
+        and ensured responses met real-world engineering standards. This strengthened my ability to assess AI reliability,
+        identify edge cases, and understand how LLMs fit into modern dev workflows.
+      </p>
+
+      <p style="max-width: 90ch; color: var(--muted);">
+        I’m especially interested in roles where <strong>software engineering, systems, and AI intersect</strong>—
+        whether that’s building intelligent applications, improving developer tooling, or supporting AI-enabled platforms at scale.
+      </p>
+
+      <p style="max-width: 90ch;">
+        <strong>I’m currently seeking software engineering roles</strong> where I can contribute to production systems,
+        grow alongside experienced engineers, and work on technically meaningful problems.
+      </p>
+    </section>
+
+    <!-- =========================
+         Focus areas panel
+         ========================= -->
+    <section class="section panel" style="padding: 20px 22px;" aria-label="Current focus areas">
+      <h2 class="section__title">Current focus areas</h2>
+      <ul style="margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,0.82);">
+        <li><strong>AI-assisted development workflows</strong> and code quality evaluation</li>
+        <li><strong>Unity / C# engineering</strong> (systems, tooling, maintainable architecture)</li>
+        <li><strong>Cloud-integrated environments</strong> and practical automation</li>
+        <li>Building <strong>reliable, maintainable software</strong> under real-world constraints</li>
+      </ul>
+    </section>
+
+  </main>
 </body>
 </html>

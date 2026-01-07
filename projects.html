@@ -1,106 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects - Charles Biffin</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- =========================
+       Metadata + SEO
+       ========================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Charles Biffin</title>
+  <meta name="description"
+        content="Selected software projects by Charles Biffin: AI email rewrite tool, cloud ML capstone, and Unity/C# WebGL interactive systems demo." />
+
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Large Page Title -->
-  <div class="page-title projects-title">Projects</div>
+  <!-- =========================================================
+       Shared Header / Nav
+       ========================================================= -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="brand">
+        <div class="brand__name">Charles Biffin</div>
+        <div class="brand__tagline">Software Engineering • AI/LLM Quality • C# • Web</div>
+      </div>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-button">Home</a>
-    <a href="about.html" class="nav-button">About me</a>
-    <a href="projects.html" class="nav-button">Projects</a>
-    <a href="links.html" class="nav-button">Links</a>
-  </nav>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a class="is-active" href="projects.html" aria-current="page">Projects</a>
+        <a href="links.html">Links</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Main Container -->
-  <div class="main-container">
+  <main id="main" class="container">
 
-    <!-- Project 1 -->
-    <div class="project-card">
-      <h3>Awaiting Adventure (Unity / C#)</h3>
-
+    <!-- =========================
+         Page header panel
+         ========================= -->
+    <section class="page-hero panel section" aria-label="Projects header">
+      <h1>Projects</h1>
       <p>
-        2D platformer/slasher built in Unity. Features spawn-and-patrol enemies,
-        animated chests, victory triggers, dynamic leaf particle effects, and parallax backgrounds.
+        Featured work that shows practical engineering: building systems, shipping usable demos,
+        and applying AI in real workflows.
+      </p>
+    </section>
+
+    <!-- =========================
+         Featured Work
+         ========================= -->
+    <section class="section" aria-label="Featured work">
+      <h2 class="section__title">Featured work</h2>
+      <p class="section__subtitle">
+        Recruiter-friendly ordering: <strong>AI tool first</strong>, then cloud/ML capstone, then interactive systems demo.
       </p>
 
-        <div class="tag-row">
+      <!-- 3-up grid (cards align via CSS) -->
+      <div class="grid grid--3">
+
+        <!-- =========================================================
+             Project 1 — Email Chatbot (AI)
+             ========================================================= -->
+        <article id="email-chatbot" class="card">
+          <h3>Email Chatbot (AI rewrite tool)</h3>
+          <p>
+            Web tool that rewrites an email message into different tones using an LLM API.
+            Focus: useful UX, predictable outputs, and clean front-end structure.
+          </p>
+
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">LLM API</span>
+            <span class="tag">Prompting</span>
+            <span class="tag">UI</span>
+          </div>
+
+          <div class="card__media">
+            <!-- Replace with a real screenshot later if you want -->
+            <img src="assets/pictures/cohere%20logo.png" alt="Email Chatbot preview" loading="lazy" />
+          </div>
+
+          <div class="card__footer">
+            <a class="btn btn--primary" href="projects/chatbot/chatbot.html">Open Demo</a>
+            <!-- If/when you add a README section in the repo, link it here -->
+            <a class="btn" href="https://github.com/CharlesBLive" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <!-- =========================================================
+             Project 2 — Autonomous Garden Monitoring (Capstone)
+             ========================================================= -->
+        <article id="agm" class="card">
+          <h3>Autonomous Garden Monitoring (Capstone)</h3>
+          <p>
+            3rd-place senior capstone: end-to-end pipeline for plant disease detection —
+            image capture → S3 → EC2-hosted ML → DynamoDB → React dashboard.
+          </p>
+
+          <div class="tags">
+            <span class="tag">AWS</span>
+            <span class="tag">ML</span>
+            <span class="tag">React</span>
+            <span class="tag">Node</span>
+            <span class="tag">DynamoDB</span>
+          </div>
+
+          <div class="card__media">
+            <img src="assets/pictures/AGMPoster.jpg" alt="Capstone poster preview" loading="lazy" />
+          </div>
+
+          <div class="card__footer">
+            <a class="btn btn--primary" href="https://github.com/BC-CapstoneProjects/22-GardenMonitoring/tree/Charles" target="_blank" rel="noopener">
+              GitHub
+            </a>
+            <a class="btn" href="links.html">Contact</a>
+          </div>
+        </article>
+
+        <!-- =========================================================
+             Project 3 — Unity WebGL (framed as interactive systems)
+             ========================================================= -->
+        <article id="unity-webgl" class="card">
+          <h3>Interactive Systems Demo (Unity/C# WebGL)</h3>
+          <p>
+            Unity/C# demo emphasizing engineering fundamentals: gameplay systems, state, UI, animation,
+            physics interactions, and AI behaviors. Shipped as a WebGL build for easy review.
+          </p>
+
+          <div class="tags">
             <span class="tag">Unity</span>
             <span class="tag">C#</span>
-            <span class="tag">Tilemap</span>
-            <span class="tag">Rule Tile</span>
-            <span class="tag">Animator</span>
-            <span class="tag">Particles</span>
-            <span class="tag">GitHub</span>
-        </div>
+            <span class="tag">WebGL</span>
+            <span class="tag">Systems</span>
+          </div>
 
-      <img src="assets/pictures/UnityProject.png" alt="Awaiting Adventure screenshot" class="game-image">
+          <div class="card__media">
+            <img src="assets/pictures/UnityProject.png" alt="Unity project preview image" loading="lazy" />
+          </div>
 
-      <a href="projects/unitygame/unitygame.html" class="game-button">Play</a>
-      <a href="https://github.com/RecLabDev/Source/tree/features/sandbox-scene-v1?tab=readme-ov-file" class="game-button" target="_blank" rel="noopener">
-        Code / Readme
-      </a>
-    </div>
+          <div class="card__footer">
+            <a class="btn btn--primary" href="projects/unitygame/unitygame.html">Play Demo</a>
+            <a class="btn" href="about.html">About</a>
+          </div>
+        </article>
 
-    <!-- Project 2 -->
-    <div class="project-card">
-      <h3>Autonomous Garden Monitoring (Senior Capstone)</h3>
+      </div>
+    </section>
 
-      <p>
-        3rd-place capstone: an end-to-end drone-based plant disease detection pipeline.
-        Captured images → stored in S3 → EC2-hosted ML classifier (Jupyter) → results in DynamoDB → visualized in React.
-      </p>
+    <footer class="site-footer">
+      <div>Tip: the fastest win is adding 1–2 real screenshots for the Email Chatbot.</div>
+    </footer>
 
-        <div class="tag-row">
-            <span class="tag">AWS S3</span>
-            <span class="tag">AWS EC2</span>
-            <span class="tag">DynamoDB</span>
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Python</span>
-            <span class="tag">Jupyter</span>
-            <span class="tag">ML</span>
-        </div>
-
-
-      <img src="assets/pictures/AGMPoster.jpg" alt="Autonomous Garden Monitoring poster" class="game-image">
-
-      <a href="https://github.com/BC-CapstoneProjects/22-GardenMonitoring/tree/Charles" class="game-button" target="_blank" rel="noopener">
-        GitHub
-      </a>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card">
-      <h3>Email Chatbot (OpenAI API)</h3>
-
-      <p>
-        Web app that rewrites an email in different tones (professional, friendly, concise, etc.).
-        Built to support fast iteration with clear UX and safe output formatting.
-      </p>
-
-        <div class="tag-row">
-            <span class="tag">JavaScript</span>
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">OpenAI API</span>
-            <span class="tag">Prompting</span>
-        </div>
-
-
-      <img src="assets/pictures/cohere logo.png" alt="Email Chatbot screenshot" class="game-image">
-
-      <a href="projects/chatbot/chatbot.html" class="game-button">Open Chatbot</a>
-    </div>
-
-  </div>
-
+  </main>
 </body>
 </html>

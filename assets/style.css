@@ -1,285 +1,429 @@
-/* =========================================================
-   CharlesBLive — Site-wide styles (clean modern refresh)
-   Works with your existing class names:
-   .navbar .nav-button .welcome .experience .projects .project-card
-   .main-container .content-box .page-title
-========================================================= */
+/* ==========================================================================
+   Charles Biffin Portfolio — style.css
+   Goal: modern, recruiter-friendly UI with simple HTML + CSS (GitHub Pages).
+   Notes:
+   - Uses CSS variables for easy theming.
+   - Uses grid + flex to keep cards aligned (equal height, buttons at bottom).
+   - Includes basic accessibility affordances (focus rings, skip link).
+   ========================================================================== */
 
-:root{
-  --bg: #0b0f14;
-  --panel: rgba(255,255,255,0.06);
-  --panel2: rgba(255,255,255,0.10);
-  --border: rgba(255,255,255,0.14);
+/* =========================
+   1) CSS Variables / Theme
+   ========================= */
+:root {
+  /* Colors */
+  --bg: #070b10;              /* page background */
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-2: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.10);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.70);
 
-  --text: rgba(255,255,255,0.92);
-  --muted: rgba(255,255,255,0.72);
+  /* Accent (teal) */
+  --accent: #19d3da;
+  --accent-2: #0ea5b4;
 
-  --accent: #00e5ff;
-  --accent2: #7c4dff;
+  /* Shadows */
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
 
+  /* Layout */
+  --max: 1100px;
   --radius: 18px;
-  --shadow: 0 18px 45px rgba(0,0,0,0.45);
-  --shadowSoft: 0 10px 25px rgba(0,0,0,0.25);
 
-  --max: 980px;
+  /* Type */
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-/* Base reset */
-*{ box-sizing: border-box; }
-html, body{ margin: 0; padding: 0; overflow-x: hidden; }
+/* =========================
+   2) Base / Reset
+   ========================= */
+* { box-sizing: border-box; }
 
-body{
-  background:
-    radial-gradient(1100px 550px at 20% 0%, rgba(0,229,255,0.12), transparent 60%),
-    radial-gradient(900px 520px at 80% 10%, rgba(124,77,255,0.10), transparent 60%),
-    var(--bg);
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family: var(--font);
   line-height: 1.6;
 }
 
-/* Typography */
-h1,h2,h3{ line-height: 1.2; margin: 0 0 10px; }
-h1{ font-size: clamp(28px, 3.2vw, 44px); letter-spacing: -0.02em; }
-h2{ font-size: clamp(22px, 2.2vw, 30px); }
-h3{ font-size: 20px; }
-
-p, li{ color: var(--muted); }
-strong{ color: var(--text); }
-
-a{ color: var(--accent); text-decoration: none; }
-a:hover{ text-decoration: underline; }
-
-/* Shared “container feel” */
-.welcome,
-.experience,
-.main-container,
-.projects{
-  width: min(92vw, var(--max));
-  margin: 22px auto;
+/* Subtle background gradient (keeps the site from feeling flat) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(900px 600px at 20% 10%, rgba(25, 211, 218, 0.18), transparent 60%),
+    radial-gradient(900px 600px at 70% 30%, rgba(14, 165, 180, 0.12), transparent 60%),
+    radial-gradient(1100px 700px at 50% 90%, rgba(255, 255, 255, 0.06), transparent 60%);
 }
 
-/* Page title banner */
-.page-title{
-  width: min(92vw, var(--max));
-  margin: 22px auto 0;
-  padding: 16px 20px;
-  border-radius: 16px;
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* Images should never overflow */
+img { max-width: 100%; display: block; }
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 3px solid rgba(25, 211, 218, 0.65);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* =========================
+   3) Utility: Container + Sections
+   ========================= */
+.container {
+  width: min(var(--max), 92vw);
+  margin: 0 auto;
+}
+
+.section {
+  margin: 26px auto;
+}
+
+.section__title {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 2.4vw, 30px);
+  letter-spacing: -0.02em;
+}
+
+.section__subtitle {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+/* A reusable “panel” wrapper */
+.panel {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
   border: 1px solid var(--border);
-  background: rgba(255,255,255,0.05);
-  box-shadow: var(--shadowSoft);
-  font-weight: 800;
-  font-size: 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   4) Accessibility: Skip Link
+   ========================= */
+/* Visible only when tabbed to */
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 10px 12px;
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 12px;
   color: var(--text);
+  transform: translateY(-140%);
+}
+.skip-link:focus {
+  transform: translateY(0%);
+  z-index: 9999;
 }
 
-/* =========================================================
-   Navbar (sticky, clean)
-========================================================= */
-.navbar{
-  position: sticky;
+/* =========================
+   5) Header / Nav (shared across pages)
+   ========================= */
+.site-header {
+  position: sticky;  /* keeps navigation visible while scrolling */
   top: 0;
-  z-index: 999;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  z-index: 50;
 
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 12px;
-  flex-wrap: wrap;
+  /* Make it feel like a top app bar */
+  background: rgba(7, 11, 16, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.nav-button{
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+}
+
+/* Brand block (name + tagline) */
+.brand {
+  display: grid;
+  gap: 2px;
+}
+.brand__name {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.brand__tagline {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Nav pills */
+.nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-1px);
+}
+
+/* Active state (set per page by adding class="is-active") */
+.nav a.is-active {
+  background: rgba(25, 211, 218, 0.14);
+  border-color: rgba(25, 211, 218, 0.35);
+}
+
+/* =========================
+   6) Hero (homepage top panel)
+   ========================= */
+.hero {
+  margin-top: 22px;
+  padding: clamp(18px, 3.2vw, 34px);
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-size: clamp(32px, 4.0vw, 56px);
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(15px, 1.6vw, 18px);
+  max-width: 70ch;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* =========================
+   7) Buttons
+   ========================= */
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 
-  padding: 10px 16px;
+  padding: 12px 16px;
   border-radius: 999px;
-
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.08);
-
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 800;
   color: var(--text);
-  font-weight: 650;
-  font-size: 16px;
 
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  background: rgba(255, 255, 255, 0.06);
+  transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
 }
-
-.nav-button:hover{
+.btn:hover {
   transform: translateY(-1px);
-  background: rgba(0,229,255,0.14);
-  border-color: rgba(0,229,255,0.35);
+  background: rgba(255, 255, 255, 0.08);
   text-decoration: none;
 }
-
-/* =========================================================
-   Sections / cards
-========================================================= */
-.welcome,
-.experience,
-.main-container{
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--panel2), var(--panel));
-  box-shadow: var(--shadowSoft);
-  padding: 26px;
+.btn--primary {
+  background: rgba(25, 211, 218, 0.14);
+  border-color: rgba(25, 211, 218, 0.35);
+}
+.btn--primary:hover {
+  background: rgba(25, 211, 218, 0.18);
 }
 
-.welcome{
-  text-align: left;
-}
-
-.welcome p{
-  margin-bottom: 0;
-}
-
-.experience .job{
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.10);
-}
-
-.experience .job:first-of-type{
-  border-top: none;
-  padding-top: 0;
-}
-
-.experience ul{
-  margin: 10px 0 0;
-  padding-left: 20px;
-}
-
-.experience li{
-  margin: 8px 0;
-}
-
-/* Reusable content boxes (About page uses these) */
-.content-box{
-  margin: 18px auto;
-  padding: 22px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
-}
-
-/* =========================================================
-   Projects layout
-========================================================= */
-.projects{
+/* =========================
+   8) Card Grid + Cards (alignment fix lives here)
+   ========================= */
+/* IMPORTANT:
+   - grid aligns items by rows
+   - each .card uses flex column so the footer sticks to bottom
+*/
+.grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 18px;
 }
 
-.project-card{
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* Responsive breakpoints */
+@media (max-width: 980px) {
+  .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .grid--2, .grid--3 { grid-template-columns: 1fr; }
+}
+
+.card {
+  /* Equal-height behavior: stretch within grid row + internal flex layout */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  padding: 18px;
   border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.14);
-  background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.05));
-  box-shadow: var(--shadowSoft);
-  padding: 22px;
-
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
 }
 
-.project-card:hover{
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-  border-color: rgba(0,229,255,0.35);
+.card h3 {
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
 }
 
-.project-card p{
-  margin: 10px 0 0;
+.card p {
+  margin: 0 0 10px;
+  color: var(--muted);
 }
 
-/* Buttons */
-.game-button{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 14px;
-  padding: 12px 16px;
-
-  border-radius: 12px;
-  font-weight: 750;
-
-  border: 1px solid rgba(0,229,255,0.35);
-  background: rgba(0,229,255,0.12);
-  color: var(--text);
-
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+/* Tech tags (chips) */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+.tag {
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  font-weight: 700;
 }
 
-.game-button:hover{
-  transform: translateY(-1px);
-  background: rgba(0,229,255,0.18);
-  text-decoration: none;
-}
-
-/* Images inside project cards if you add them */
-.project-card img{
-  width: 100%;
-  height: auto;
+/* Project images:
+   - aspect-ratio keeps all cards visually consistent
+   - object-fit crops safely without stretching
+*/
+.card__media {
   border-radius: 14px;
-  margin-top: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.20);
+  aspect-ratio: 16 / 9;
+}
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* =========================================================
-   Mobile tweaks
-========================================================= */
-@media (min-width: 900px){
-  .projects{
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 520px){
-  .nav-button{
-    flex: 1 1 auto;
-    width: calc(50% - 10px);
-    justify-content: center;
-  }
-
-  .welcome,
-  .experience,
-  .main-container{
-    padding: 18px;
-  }
-
-  .content-box{
-    padding: 18px;
-  }
-}
-
-
-/* ==========================
-   Project Tags (nice “pills”)
-========================== */
-.tag-row {
+/* Footer pinned to bottom of card */
+.card__footer {
+  margin-top: auto; /* THIS is the magic: pushes footer to bottom */
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 14px 0 18px;
+  padding-top: 14px;
 }
 
-.tag {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 999px;
+/* =========================
+   9) Experience List
+   ========================= */
+.experience-list {
+  display: grid;
+  gap: 14px;
+}
+
+.role {
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.role__top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.role__title {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.role__meta {
+  margin: 0;
+  color: var(--muted);
   font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-
-  background: rgba(0, 255, 255, 0.12);
-  border: 1px solid rgba(0, 255, 255, 0.5);
-  color: #bffcff;
 }
-.project-card .game-button {
-  margin-right: 10px;
-  margin-top: 10px;
+
+.role ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.role li { margin: 6px 0; }
+
+/* =========================
+   10) Page Header Panel (Projects/Links/About top title panel)
+   ========================= */
+.page-hero {
+  margin-top: 22px;
+  padding: 20px 22px;
+}
+
+.page-hero h1 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 36px);
+  letter-spacing: -0.02em;
+}
+
+.page-hero p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  max-width: 80ch;
+}
+
+/* =========================
+   11) Footer (optional)
+   ========================= */
+.site-footer {
+  margin: 36px 0 26px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+}
+
+/* =========================
+   12) Small devices polish
+   ========================= */
+@media (max-width: 520px) {
+  .site-header__inner { gap: 12px; }
+  .nav a { padding: 9px 12px; }
+  .hero__cta { gap: 10px; }
 }
