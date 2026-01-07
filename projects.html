@@ -1,52 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Projects - Charles Biffin</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Projects - Charles Biffin</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
-    <!-- Large Page Title -->
-    <div class="page-title projects-title">Projects Page</div>
+  <!-- Large Page Title -->
+  <div class="page-title projects-title">Projects</div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="nav-button">Home</a>
-        <a href="about.html" class="nav-button">About me</a>
-        <a href="projects.html" class="nav-button">Projects</a>
-        <a href="links.html" class="nav-button">Links</a>
-    </nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-button">Home</a>
+    <a href="about.html" class="nav-button">About me</a>
+    <a href="projects.html" class="nav-button">Projects</a>
+    <a href="links.html" class="nav-button">Links</a>
+  </nav>
 
-    <!-- Main Container -->
-    <div class="main-container">
+  <!-- Main Container -->
+  <div class="main-container">
 
-        <!-- First Card -->
-        <div class="project-card">
-            <h3>Awaiting Adventure</h3>
-                <p>Technologies used: Unity, C#, Visual Studio, Tilemap, Rule Tile, GitHub Desktop, Unity Particle System The game includes Enemies with spawn points and walking paths. Chests with animations when opened. A victory area with animations when reached. Particle system that blows leaves through the map. Parallax background to give the game more liveliness</p>
-            <img src="assets/pictures/UnityProject.png" alt="Unity Game Screenshot" class="game-image">
-            <a href="https://charlesblive.github.io/projects/unitygame/UnityGame.html" class="game-button">Play</a>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>Awaiting Adventure (Unity / C#)</h3>
+
+      <p>
+        2D platformer/slasher built in Unity. Features spawn-and-patrol enemies,
+        animated chests, victory triggers, dynamic leaf particle effects, and parallax backgrounds.
+      </p>
+
+        <div class="tag-row">
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">Tilemap</span>
+            <span class="tag">Rule Tile</span>
+            <span class="tag">Animator</span>
+            <span class="tag">Particles</span>
+            <span class="tag">GitHub</span>
         </div>
-    
-        <!-- Second Card -->
-        <div class="project-card">
-            <h3>Autonomous Garden Monitoring</h3>
-                <p>Third place winner of Senior Capstone Project(Machine Learning, React, AWS Cloud Computing, Node JS) Built an end-to-end drone-based plant disease detection pipeline: used onboard object recognition to capture plant images to S3, ran an EC2-hosted ML classifier (via Jupyter) to predict disease, stored results in DynamoDB, and visualized findings in a React app.</p>
-            <img src="assets/pictures/AGMPoster.jpg" alt="Unity Game Screenshot" class="game-image">
-            <a href="https://github.com/BC-CapstoneProjects/22-GardenMonitoring/tree/Charles" class="game-button">Project Github</a>
-        </div>
-    
-        <!-- Third Card -->
-        <div class="project-card">
-            <h3>Email chatbot</h3>
-            <p>Generative Ai chatbot that uses OpenAi api. It takes your email message and rewrites it in your desired tone</p>
-            <img src="assets/pictures/UnityProject.png" alt="Unity Game Screenshot" class="game-image">
-            <a href="https://charlesblive.github.io/projects/chatbot/chatbot.html" class="game-button">ChatBot</a>
-        </div>
-    
+
+      <img src="assets/pictures/UnityProject.png" alt="Awaiting Adventure screenshot" class="game-image">
+
+      <a href="projects/unitygame/unitygame.html" class="game-button">Play</a>
+      <a href="https://github.com/RecLabDev/Source/tree/features/sandbox-scene-v1?tab=readme-ov-file" class="game-button" target="_blank" rel="noopener">
+        Code / Readme
+      </a>
     </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>Autonomous Garden Monitoring (Senior Capstone)</h3>
+
+      <p>
+        3rd-place capstone: an end-to-end drone-based plant disease detection pipeline.
+        Captured images → stored in S3 → EC2-hosted ML classifier (Jupyter) → results in DynamoDB → visualized in React.
+      </p>
+
+        <div class="tag-row">
+            <span class="tag">AWS S3</span>
+            <span class="tag">AWS EC2</span>
+            <span class="tag">DynamoDB</span>
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Python</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">ML</span>
+        </div>
+
+
+      <img src="assets/pictures/AGMPoster.jpg" alt="Autonomous Garden Monitoring poster" class="game-image">
+
+      <a href="https://github.com/BC-CapstoneProjects/22-GardenMonitoring/tree/Charles" class="game-button" target="_blank" rel="noopener">
+        GitHub
+      </a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <h3>Email Chatbot (OpenAI API)</h3>
+
+      <p>
+        Web app that rewrites an email in different tones (professional, friendly, concise, etc.).
+        Built to support fast iteration with clear UX and safe output formatting.
+      </p>
+
+        <div class="tag-row">
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">OpenAI API</span>
+            <span class="tag">Prompting</span>
+        </div>
+
+
+      <img src="assets/pictures/cohere logo.png" alt="Email Chatbot screenshot" class="game-image">
+
+      <a href="projects/chatbot/chatbot.html" class="game-button">Open Chatbot</a>
+    </div>
+
+  </div>
 
 </body>
 </html>
